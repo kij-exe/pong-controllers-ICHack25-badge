@@ -2,7 +2,7 @@
 
 ### Overview
 
-This repository contains firmware for controllers, designed for the Raspberry Pi Pico using ESP01 for WiFi communication:
+This repository contains source code of the firmware for controllers, designed to run on [ICHack Badge board](https://github.com/ICRS/IC-Hack-Badge) (similar to Raspberry Pi Pico) with ESP01 for WiFi communication on a wireless controller:
 
 *   **`remote_controller/`**: Contains the source code and build files for the wireless remote controller.
 *   **`usb_controller/`**: Contains the source code and build files for the USB-tethered controller.
@@ -12,7 +12,7 @@ Each directory is a self-contained CMake project that requires the Raspberry Pi 
 
 _(The `CMakeLists.txt` and `pico_sdk_import.cmake` files were generated using the official Raspberry Pi Pico extension for VS Code on Windows 11.)_
 
-The actual boards used are designed by ICRS, repository to their initial firmware and hardware specification can be found [here](https://github.com/ICRS/IC-Hack-Badge).
+The actual boards used are designed by [ICRS](https://github.com/ICRS), repository to their initial firmware and hardware specification can be found [here](https://github.com/ICRS/IC-Hack-Badge).
 
 <!-- TODO: add information about ESP01 -->
 
