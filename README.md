@@ -12,9 +12,13 @@ Each directory is a self-contained CMake project that requires the Raspberry Pi 
 
 _(The `CMakeLists.txt` and `pico_sdk_import.cmake` files were generated using the official Raspberry Pi Pico extension for VS Code on Windows 11.)_
 
-The actual boards used are designed by [ICRS](https://github.com/ICRS), repository to their initial firmware and hardware specification can be found [here](https://github.com/ICRS/IC-Hack-Badge).
+The actual boards used are designed by [ICRS](https://github.com/ICRS), repository to their hardware specifications can be found [here](https://github.com/ICRS/IC-Hack-Badge).
 
-<!-- TODO: add information about ESP01 -->
+### Wi-Fi module
+
+To connect the board to a local network I used an ESP8266 Serial Wi-Fi Wireless Transceiver Module (ESP-01).
+![Wiring diagram](/images/wiring_diagram.jpg)
+The module connects to the board over its UART1 port, which enables serial communication. The module can read AT commands sent from the board and produces appropriate responses that are then processed by the main microcontroller board.
 
 ### Prerequisites
 
@@ -44,7 +48,7 @@ TODO: Must be updated to specify exact platforms
 
 The firmware can be configured for easier debugging by modifying its `CMakeLists.txt` file.
 
-#### 1. Enabling USB Serial Output (stdio)
+#### Enabling USB Serial Output (stdio)
 
 By default, the Pico's standard I/O (**stdio**) streams are routed to **UART0**. To read serial output (e.g., from `printf`) directly over the controller's USB connection, you must redirect **stdio** to USB.
 
@@ -56,7 +60,7 @@ pico_enable_stdio_uart(project_name 0)
 ```
 where project_name is the name of your _specific_ project.
 
-#### 2. Enabling Verbose Debug Logging
+#### Enabling Verbose Debug Logging
 
 The source code contains extensive diagnostic logging that is compiled only when the `DEBUG` preprocessor macro is defined. This allows you to enable verbose logging for development without impacting the performance or size of the final release build.
 
