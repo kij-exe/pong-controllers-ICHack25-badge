@@ -60,6 +60,8 @@ pico_enable_stdio_uart(project_name 0)
 ```
 where project_name is the name of your _specific_ project.
 
+Tools like `PuTTY` for Windows and `screen` for Linux can be used to read/send data over the serial USB connection.
+
 #### Enabling Verbose Debug Logging
 
 The source code contains extensive diagnostic logging that is compiled only when the `DEBUG` preprocessor macro is defined. This allows you to enable verbose logging for development without impacting the performance or size of the final release build.
